@@ -1,0 +1,300 @@
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: green;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0px 10px;
+        }
+
+        .logo img {
+            max-width: 70px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin-right: 35px;
+            position: relative;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: normal;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        nav ul li:hover .dropdown {
+            display: block;
+        }
+
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: -50%;
+            background-color: rgba(51, 51, 51, 0);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0);
+            z-index: 1;
+        }
+
+        .dropdown li {
+            display: block;
+            padding: 10px;
+            white-space: nowrap;
+        }
+
+        .dropdown li a {
+            display: block;
+            transition: transform 0.3s ease-in-out;
+            color: orange;
+			font-weight: bold;
+        }
+
+        .dropdown li:hover a {
+            transform: scale(1.2);
+        }
+		
+		/* Add the following CSS code to your existing code */
+
+		.contact-form {
+		  position: fixed;
+		  top: 10%;
+		  left: 70%;
+		  width: 30%;
+		  height: auto;
+		  background-color: #fff;
+		  padding: 20px;
+		  border-radius: 5px;
+		  visibility: hidden;
+		  opacity: 0;
+		  transition: visibility 0s, opacity 0.5s;
+		  z-index: 999; /* Add a higher z-index to ensure the form overlays other content */
+		}
+
+		#contact-form {
+		  background-color: #ccc;
+		  padding: 20px;
+		  border-radius: 5px;
+		}
+
+		#contact-form form {
+		  display: flex;
+		  flex-direction: column;
+		}
+
+		#contact-form label {
+		  margin-top: 10px;
+		  font-weight: bold;
+		}
+
+		#contact-form input,
+		#contact-form textarea {
+		  margin-top: 5px;
+		  padding: 5px;
+		}
+
+		#contact-form input[type="submit"] {
+		  margin-top: 10px;
+		  background-color: #4CAF50;
+		  color: white;
+		  padding: 10px;
+		  border: none;
+		  border-radius: 5px;
+		  cursor: pointer;
+		}
+
+		#contact-form input[type="submit"]:hover {
+		  background-color: #3e8e41;
+		}
+
+		#contact-link {
+		  color: #fff;
+		  text-decoration: none;
+		}
+
+		#contact-link:hover {
+		  text-decoration: underline;
+		}
+
+		.close-btn {
+		  position: absolute;
+		  top: 0;
+		  right: 0;
+		  background-color: transparent;
+		  border: none;
+		  font-size: 20px;
+		  color: #999;
+		  cursor: pointer;
+		}
+
+		.close-btn:hover {
+		  color: #ccc;
+		}
+
+        .hero {
+            position: relative;
+            min-height: 65vh;
+            overflow: hidden;
+            background-image: url('vrhbg.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 10;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero__title {
+            font-size: 2rem;
+            margin: 0;
+            text-shadow: 2px 2px #ccc;
+            color: orange;
+            text-align: center;
+        }
+
+        .hello-container {
+            position: absolute;
+            top: 23%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(1);
+            color: orange; /* #3CB371 */
+            font-size: 2.5rem;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .hello-container:hover {
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        .main-content {
+            display: flex;
+            justify-content: space-between;
+            padding: 25px;
+            border-left: 0px solid white;
+            border-right: 0px solid white;
+        }
+
+        .content {
+            flex: 2;
+            text-align: justify;
+        }
+
+        .content p {
+            text-align: justify;
+        }
+
+		.sidebar {
+			flex: 0.8;
+			border-right: 10px solid green;
+			border-left: 1px solid orange;
+			border-top: 1px solid orange;
+			padding: 1.5rem;
+			box-sizing: border-box;
+			background-image: url('sidebar.jpg'); /* Add your image URL */
+			background-size: cover;
+			background-position: center;
+			color: white;
+		}
+
+		
+		.indent {
+			text-indent: 1em;
+		}
+
+        footer {
+            background-color: green;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 2rem;
+            min-height: 30vh;
+        }
+
+        .footer-block {
+            flex: 1;
+        }
+
+        .footer-logo {
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-right {
+            margin-left: auto;
+        }
+
+        .copyright-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .copyright {
+            margin: 0;
+        }
+		
+		#scrollUpBtn {
+		  position: fixed;
+		  right: 20px;
+		  bottom: 20px;
+		  cursor: pointer;
+		  opacity: 0.5;
+		  transition: opacity 0.3s linear;
+		  z-index: 100;
+		  background-color: transparent; /* Set the background-color to transparent */
+		}
+
+		#scrollUpBtn svg {
+		  fill: white;
+		  width: 35px;
+		  height: 35px;
+		}
+
+		#scrollUpBtn:hover {
+		  opacity: 1;
+		}
+
+        @media (max-width: 600px) {
+            footer {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .footer-block {
+                flex: 1;
+                margin-bottom: 15px;
+            }
+        }
+    </style>

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../vrstylesheet.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css">
+	<script src="../vrscript.js"></script> <!-- Link to JavaScript file -->
+    <title>Vizone Rentals</title>
+    <style>
+	  .hero {
+		background-image: url('./background.jpg');
+		background-position: center;
+		background-size: cover;
+		height: 200px;
+		position: relative;
+		display: flex; /* Added flexbox properties */
+		justify-content: center;
+		align-items: center;
+	  }
+
+		.hero-image {
+		  position: absolute;
+		  top: 40px;
+		  right: 0; /* Change from right to left */
+		  width: 40%;
+		  height: 75%;
+		  background-size: cover;
+		  background-position: center;
+		  opacity: 0;
+		  animation: slide 20s infinite;
+		}
+	  
+	  .hero-image::before {
+		  content: "";
+		  position: absolute;
+		  top: -10px; /* Adjust the border size by modifying the top and left values */
+		  left: -10px;
+		  width: calc(100% + 20px); /* Add the border size to the width */
+		  height: calc(100% + 20px); /* Add the border size to the height */
+		  background-color: transparent;
+		  filter: blur(10px); /* Adjust the blur radius to control the softness of the border */
+		  z-index: 3; /* Place the pseudo-element behind the images */
+		} 
+	  
+	 .hero-text {
+	   position: absolute;
+	   top: 90%;
+	   left: 50%;
+	   transform: translate(-50%, -50%);
+	   z-index: 1; /* Ensure the text is on top of the images */
+	 }
+      
+      .hero-image:nth-child(1) {
+        animation-delay: 0.5s;
+      }
+      
+      .hero-image:nth-child(2) {
+        animation-delay: 3s;
+      }
+
+      .hero-image:nth-child(3) {
+        animation-delay: 6s;
+      }
+      
+      .hero-image:nth-child(4) {
+        animation-delay: 9s;
+      }
+      
+      .hero-image:nth-child(5) {
+        animation-delay: 12s;
+      }
+
+		@keyframes slide {
+		  0% {
+			opacity: 0;
+			left: 100%; /* Change from right to left */
+		  }
+		  10% {
+			opacity: 1;
+			left: 30%; /* Slide to the center */
+		  }
+		  30% {
+			opacity: 1;
+			left: 30%; /* Station at the center */
+		  }
+		  40% {
+			opacity: 0;
+			left: -40%; /* Change from -100% to 150% */
+		  }
+		  100% {
+			opacity: 0;
+			left: -30%; /* Change from -100% to 150% */
+		  }
+		}
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Section -->
+	<!-- Header Section -->
+	<header style="position: fixed; width: 100%; top: 0; z-index: 500;">
+	  <div class="logo">
+		<a href="../vrmainpage.html" class="logo"><img src="../vizonelogo2.png" alt="Vizone Logo"></a>
+	  </div>
+	  <div class="title">
+		<h1>Vizone Rentals</h1>
+	  </div>
+	  <nav>
+		<ul>
+		  <li><a href="../vrmainpage.html#">Home</a></li>
+		  <li><a href="#">About Us</a></li>
+		  <li>
+			<a href="#">Our Services</a>
+			<ul class="dropdown">
+			  <li><a href="../housingallowancemgnt/housingallowancemgnt.html#">Housing Allowance Management</a></li>
+			  <li><a href="../cabservices&hirecars/cabservices&hirecars.html#">Cab and Hire Car Services</a></li>
+			  <li><a href="../assetsforlse/assetsforlse.html#">Assets for Lease</a></li>
+			  <li><a href="../realestatemgnt/realestatemgnt.html#">Real Estate Management</a></li>
+			  <li><a href="#">Import Services</a></li>
+			</ul>
+		  </li>
+		  <li><a href="#" id="contact-link">Contact Us</a></li>
+		</ul>
+	  </nav>
+	</header>
+
+	<!-- Contact Form -->
+
+	<div class="contact-form" id="contact-form">
+	  <button class="close-btn" id="close-btn">✕</button>
+	  <h2>Contact Us</h2>
+	  <form>
+		<label for="full-name">Full Name:</label>
+		<input type="text" id="full-name" name="full-name" required>
+		<label for="email-address">Email Address:</label>
+		<input type="email" id="email-address" name="email-address" required>
+		<label for="message">Message:</label>
+		<textarea id="message" name="message" required></textarea>
+		<input type="submit" value="Submit">
+	  </form>
+	</div>
+
+    <!-- Hero Section -->
+	<section class="hero">
+	  <div class="container mx-auto flex flex-col justify-center items-center h-full">
+		<div class="hero-image" style="background-image: url('./test1.png')"></div>
+		<div class="hero-image" style="background-image: url('./test2.png')"></div>
+		<div class="hero-image" style="background-image: url('./test3.jpg')"></div>
+		<div class="hero-image" style="background-image: url('./test4.jpg')"></div>
+		<div class="hero-image" style="background-image: url('./test5.jpg')"></div>
+		<div class="hero-text"> <h1 class="text-3xl text-white font-bold mb-4">Welcome to Vizone Import Services</h1> </div>
+		<a href="#" class="bg-gray-800 text-white py-2 px-4 rounded hover:bg-gray-700">Get Started</a>
+	  </div>
+	</section>
+
+    <!-- Main Content Section with Sidebars -->
+    <section class="main-content">
+        <div class="content">
+            <!-- Add your main content here -->
+            <div>
+                <h2 style="text-align:center;">Import Services</h2>
+                <p>With extensive experience in importation, particularly in the realm of used cars, equipment, and parts, we pride ourselves on being well-versed in navigating complex customs regulations. Rest easy knowing that your imports are in capable hands throughout the entire shipping and clearance process.</p>
+                <p></p>
+            </div>
+        </div>	
+		    <!-- Add your sidebar content here -->	
+		<aside class="sidebar">
+			<h4 class="indent">Property Consultation</h4>
+			<p class="indent"><em>Get personalized guidance and strategic insights from our certified experts, helping you secure profitable investments.</em></p>
+		</aside>
+    </section>
+
+    <!-- Footer Section -->
+        <!-- Footer and Copyright Section -->
+    <div class="footer-copyright-container" style="background-color: green; color: #fff; padding: 0.5rem 2rem;">
+        <!-- Footer Section -->
+        <footer style="margin-bottom: 0.5rem;">
+            <div class="footer-block footer-logo">
+                <a href="../vrmainpage.html" class="logo"><img src="../vizonelogo2.png" alt="Vizone Logo" style="width: 200px; height: auto;"></a>
+            </div>
+			<div class="footer-block footer-links">
+				<a href="../housingallowancemgnt/housingallowancemgnt.html#">Housing Allowance Management</a>
+				<a href="../cabservices&hirecars/cabservices&hirecars.html#">Cab and Hire Car Services</a>
+				<a href="../assetsforlse/assetsforlse.html#">Assets for Lease</a>
+				<a href="../realestatemgnt/realestatemgnt.html#">Real Estate Management</a>
+				<a href="#">Import Services</a>
+			</div>
+            <div class="footer-block footer-right">
+                <!-- Add content for the right side of the footer -->
+            </div>
+        </footer>
+        <!-- Scroll up button -->
+        <button id="scrollUpBtn" onclick="scrollToTop()">
+          <img src="../arrow_up.png" alt="Scroll Up Button" style="width: 35px; height: 35px;" />
+        </button>
+
+        <!-- Copyright Section -->
+        <div class="copyright-container" style="color: #fff;">
+            <p class="copyright">&copy; 2024 Vizone Rentals. All rights reserved.</p>
+            <ul style="list-style: none; padding: 0; margin: 0; display: flex; justify-content: center;">
+                <li style="margin-right: 10px;"><a href="#">Terms of Use</a></li>
+                <li style="margin-right: 10px;"><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Site Map</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- Scroll up javascript -->
+    <script type="text/javascript">
+      window.addEventListener("DOMContentLoaded", () => {
+        const scrollUpBtn = document.getElementById("scrollUpBtn");
+
+        // Show / hide scroll-up button based on page scroll position
+        function toggleScrollUpButtonVisibility() {
+          let currentPosition = window.pageYOffset || document.documentElement.scrollTop;
+
+          if (currentPosition > 200) {
+            scrollUpBtn.classList.add("show");
+          } else {
+            scrollUpBtn.classList.remove("show");
+          }
+        }
+
+        // Scroll to top animation
+        function scrollToTop() {
+          let targetPosition = 0;
+
+          let startPosition = window.pageYOffset;
+          let timeInterval = setInterval(() => {
+            if (targetPosition <= startPosition) {
+              clearInterval(timeInterval);
+              return;
+            }
+
+            startPosition -= 10;
+            window.scrollTo(0, startPosition);
+          }, 10);
+        }
+
+        // Event listeners
+        scrollUpBtn.addEventListener("click", scrollToTop);
+        window.addEventListener("scroll", toggleScrollUpButtonVisibility);
+
+        // Initial visibility check
+        toggleScrollUpButtonVisibility();
+
+        // Get the sidebar element
+        var sidebar = document.querySelector('.sidebar');
+
+        // Set the initial position to hidden
+        sidebar.style.right = '-500px';
+
+        // Create a new Intersection Observer instance
+        var observer = new IntersectionObserver(function(entries) {
+          // For each entry, check if the element is intersecting with the viewport
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              // If the element is intersecting, slide in the sidebar
+              sidebar.style.right = '0';
+            } else {
+              // If the element is not intersecting, slide out the sidebar
+              sidebar.style.right = '-500px';
+            }
+          });
+        }, {
+          // Set the root margin to control when the intersection is detected
+          rootMargin: '-50px 0px -50px 0px'
+        });
+
+        // Observe the .main-content element
+        observer.observe(document.querySelector('.main-content'));
+
+        // Add a slide-in animation to the <h4> and <p> elements in the sidebar
+        var slideInElements = document.querySelectorAll('.sidebar .slide-in-animation');
+        slideInElements.forEach(function(element) {
+          element.style.transition = 'transform 0.5s ease-in-out';
+          element.style.transform = 'translateX(-500px)';
+        });
+
+        // Observe the sidebar and slide in the elements when the sidebar is visible
+        var sidebarObserver = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              slideInElements.forEach(function(element) {
+                element.style.transform = 'translateX(0)';
+              });
+            } else {
+              slideInElements.forEach(function(element) {
+                element.style.transform = 'translateX(-500px)';
+                element.style.opacity = '0.5';
+              });
+            }
+          });
+        }, {
+          rootMargin: '-50px 0px -50px 0px'
+        });
+        sidebar.classList.add('slide-in-animation');
+        sidebarObserver.observe(document.querySelector('.sidebar'));
+
+        // Add a mouseover event listener to the main content section
+        var mainContent = document.querySelector('.main-content');
+        mainContent.addEventListener('mouseover', function() {
+          sidebar.style.right = '0';
+          slideInElements.forEach(function(element) {
+            element.style.transform = 'translateX(0)';
+            element.style.opacity = '0.65';
+          });
+        });
+
+        // Add a mouseout event listener to the main content section
+        mainContent.addEventListener('mouseout', function() {
+          sidebar.style.right = '-500px';
+          slideInElements.forEach(function(element) {
+            element.style.transform = 'translateX(-500px)';
+            element.style.opacity = '0';
+          });
+        });
+      });
+    </script>
+
+</body>
+
+</html>
